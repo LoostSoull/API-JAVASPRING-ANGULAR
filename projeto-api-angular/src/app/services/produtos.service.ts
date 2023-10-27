@@ -7,13 +7,8 @@ import { IProdutos } from '../interfaces/produtos';
 })
 
 export class ConexaoApiService {
-  apiUrl = 'http://localhost:8080/api'; 
-  httpOptions = {
-    headers: new HttpHeaders({
-      'content-type': 'application/jason'
-    })
-  };
-  
+  apiUrl = 'http://localhost:8080/api/produtos'; 
+ 
   constructor(private httpcliente:HttpClient) { }
 
   public getDados() {

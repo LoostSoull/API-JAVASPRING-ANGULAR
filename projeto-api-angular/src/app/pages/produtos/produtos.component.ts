@@ -11,12 +11,12 @@ import { ConexaoApiService } from 'src/app/services/produtos.service';
 export class ProdutosComponent {
 
   constructor(private conexaoapi:ConexaoApiService){}
-
+  
   dadosRecebidos: IProdutos[] = [] ;
  
-  Oninit(){
-    console.log(this.exibeDados());
-  }
+  ngOnInit(){
+    this.exibeDados();
+    }
 
   exibeDados(){
     this.conexaoapi.getDados().subscribe(data => {

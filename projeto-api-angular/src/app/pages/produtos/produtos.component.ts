@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { IRecebeDados } from 'src/app/apiDados/recebe-dados';
+import { ConexaoApiService } from 'src/app/services/conexao-api.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -9,50 +11,19 @@ import Swal from 'sweetalert2';
 })
 export class ProdutosComponent {
 
-  constructor(private router:Router){}
+  constructor(private conexaoapi:ConexaoApiService){}
 
-  irCadastro(){
-    this.router.navigate(['cadastrar']);
-  }
-  deletaProduto(){
-    const swalWithBootstrapButtons = Swal.mixin({
-      customClass: {
-        confirmButton: 'btn btn-success',
-        cancelButton: 'btn btn-danger'
-      },
-      buttonsStyling: false
-    })
-    
-    swalWithBootstrapButtons.fire({
-      title: 'Are you sure?',
-      text: "You won't be able to revert this!",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonText: 'Yes, delete it!',
-      cancelButtonText: 'No, cancel!',
-      reverseButtons: true
-    }).then((result) => {
-      if (result.isConfirmed) {
-        swalWithBootstrapButtons.fire(
-          'Deleted!',
-          'Your file has been deleted.',
-          'success'
-        )
-      } else if (
-        /* Read more about handling dismissals below */
-        result.dismiss === Swal.DismissReason.cancel
-      ) {
-        swalWithBootstrapButtons.fire(
-          'Cancelled',
-          'Your imaginary file is safe :)',
-          'error'
-        )
-      }
-    })
-  }
+  dadosRecebidos: IRecebeDados[] = [];
+ 
   Oninit(){
-    
+    console.log(this.exibeDados());
   }
 
+  exibeDados(){
+    this.conexaoapi.getDados().subscribe(data => {
+       this.dadosRecebidos = data;
+       console.log(this.dadosRecebidos);
+    });
+  }
  
 }

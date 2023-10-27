@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IRecebeDados } from '../apiDados/recebe-dados';
+import { IProdutos } from '../interfaces/produtos';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,7 @@ export class ConexaoApiService {
   constructor(private httpcliente:HttpClient) { }
 
   public getDados() {
-    return this.httpcliente.get<IRecebeDados[]>(this.apiUrl);
+    return this.httpcliente.get<IProdutos[]>(this.apiUrl);
   }
 
 }

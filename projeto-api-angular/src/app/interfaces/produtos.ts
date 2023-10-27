@@ -1,5 +1,5 @@
-export interface IRecebeDados {
-    id: 1;
+export interface IProdutos {
+    id: number;
     codigoBarras: string;
     nome: string;
     preco: number;

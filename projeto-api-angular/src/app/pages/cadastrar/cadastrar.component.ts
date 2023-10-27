@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-cadastrar',
@@ -8,7 +8,5 @@ import Swal from 'sweetalert2';
 })
 export class CadastrarComponent {
 
-  teste(){
-    Swal.fire('Cadastro Realizado com sucesso!')
-  }
+ 
 }

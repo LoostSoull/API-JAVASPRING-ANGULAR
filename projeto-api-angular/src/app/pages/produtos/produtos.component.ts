@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { IRecebeDados } from 'src/app/apiDados/recebe-dados';
-import { ConexaoApiService } from 'src/app/services/conexao-api.service';
-import Swal from 'sweetalert2';
+import { IProdutos } from 'src/app/interfaces/produtos';
+import { ConexaoApiService } from 'src/app/services/produtos.service';
+
 
 @Component({
   selector: 'app-produtos',
@@ -13,7 +12,7 @@ export class ProdutosComponent {
 
   constructor(private conexaoapi:ConexaoApiService){}
 
-  dadosRecebidos: IRecebeDados[] = [];
+  dadosRecebidos: IProdutos[] = [] ;
  
   Oninit(){
     console.log(this.exibeDados());

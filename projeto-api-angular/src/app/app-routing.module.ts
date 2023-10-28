@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ProdutosComponent } from './pages/produtos/produtos.component';
-import { CadastrarComponent } from './pages/cadastrar/cadastrar.component';
+import { ProdutosComponent } from './pages/produto/produto.component';
+import { CadastrarComponent } from './pages/cadastrar-produto/cadastrar-produto.component';
 import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [

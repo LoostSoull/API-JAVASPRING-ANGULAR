@@ -1,4 +1,4 @@
-export interface IProdutos {
+export interface Produtos {
     id: number;
     codigoBarras: string;
     nome: string;

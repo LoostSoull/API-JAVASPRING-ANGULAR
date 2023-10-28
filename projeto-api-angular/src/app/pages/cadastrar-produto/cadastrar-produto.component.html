@@ -3,24 +3,26 @@
 </div>
 
 
-<form>
+<form [formGroup]="produtosForm" (submit)="enviaDados()">
     <div class="mb-3 my-3">
         
+       
+
         <div class="input-group">
             <span class="input-group-text">Codigo De Barras</span>
-            <input type="number" class="form-control" id="codigoBarras" placeholder="Digite o codigo de barras">
+            <input type="text" class="form-control" id="codigoBarras" formControlName="codigoBarras"  placeholder="Digite o codigo de barras">
         </div>
     </div>
     <div class="mb-3">
          <div class="input-group">
              <span class="input-group-text">Nome</span>
-             <input type="name" class="form-control" id="nome" placeholder="Digite o nome do produto">
+             <input type="text" class="form-control" id="nome" formControlName="nome" placeholder="Digite o nome do produto">
        </div>
       </div>
       <div class="mb-3">
         <div class="input-group">
             <span class="input-group-text"> Preço</span>
-        <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor do produto">
+        <input type="number" class="form-control" id="preco" formControlName="preco" placeholder="Digite o valor do produto">
         </div>
       </div>
 

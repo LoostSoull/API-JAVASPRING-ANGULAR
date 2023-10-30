@@ -1,9 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormControl} from '@angular/forms';
-
+import { Produtos } from 'src/app/interfaces/produtos';
 import { ConexaoApiService } from 'src/app/services/produtoService.service';
-
-
+import { ProdutosComponent } from '../produto/produto.component';
 
 
 @Component({
@@ -11,10 +10,12 @@ import { ConexaoApiService } from 'src/app/services/produtoService.service';
   templateUrl: './cadastrar-produto.component.html',
   styleUrls: ['./cadastrar-produto.component.css']
 })
-export class CadastrarComponent {
-  
- 
 
+
+export class CadastrarComponent implements OnInit {
+
+  constructor(private conexaoApi:ConexaoApiService){}
+  
   produtosForm = new FormGroup({
    
     id: new FormControl(0),
@@ -24,13 +25,19 @@ export class CadastrarComponent {
   })
 
   
+  
+  ngOnInit(): void {
+    
+  }
+  
 
-  enviaDados(){
-      
-      console.log(this.produtosForm.value);
-
+  enviar(){
+    const produto: Partial <Produtos> = this.produtosForm.value as Produtos;
+      this.conexaoApi.enviaDados(produto).subscribe(data =>{console.log('deu certo')});
+      this.produtosForm.reset();
    }
   
+   
   }
 
     

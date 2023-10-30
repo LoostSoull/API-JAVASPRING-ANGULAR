@@ -17,8 +17,13 @@ export class ConexaoApiService {
   public getDados() {
     return this.httpcliente.get<Produtos[]>(this.apiUrl);
   }
-  public enviaDados(servico:Produtos){
-    return this.httpcliente.post(this.apiUrl, ProdutosComponent);
+  public enviaDados(produto:Partial<Produtos>){
+    return this.httpcliente.post(this.apiUrl, produto);
   }
-
+  public excluir(id:number){
+    return this.httpcliente.delete<Produtos>(`http://localhost:8080/api/produtos/${id}`)
+  }
+  public alteraDados(produto:Partial<Produtos>,id:number){
+    return this.httpcliente.put<Produtos>(this.apiUrl,produto);
+  }
 }

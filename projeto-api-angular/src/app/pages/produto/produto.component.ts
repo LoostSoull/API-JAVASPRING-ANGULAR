@@ -12,7 +12,7 @@ import { ConexaoApiService } from 'src/app/services/produtoService.service';
 })
 export class ProdutosComponent {
 
-  constructor(private conexaoApi:ConexaoApiService,private serviceProduto:Produtos){}
+  constructor(private conexaoApi:ConexaoApiService){}
   
   dadosRecebidos: Produtos[] = [] ;
 
@@ -25,6 +25,8 @@ export class ProdutosComponent {
     nome: new FormControl(''),
     preco: new FormControl(0)
   })
+
+ 
  
   ngOnInit(){
     this.exibeDados();
@@ -37,9 +39,28 @@ export class ProdutosComponent {
     });
   }
 
-  enviar(){
-      console.log(this.produtosEnviados);
- };
-  
+
+
+  excluircomp(id:number){
+    this.conexaoApi.excluir(id).subscribe(produto =>{
+      this.dadosRecebidos = this.dadosRecebidos.filter((produto) => produto.id != id);
+    })
+    
   }
 
+
+  altera(){
+    
+  }
+}
+  
+
+
+ /* editarProduto(id: number) {
+    let produtoAtual = this.produtos.find((produtos) => {return produtos.id === id});
+    console.log(produtoAtual);
+  }*/
+
+  /*const produto: Partial <Produtos> = this.produtosForm.value as Produtos;
+    this.conexaoApi.alteraDados(produto).subscribe(produto =>{
+      this.produtosForm = this.produtosForm.filter((produto) => produto.id != id);*/

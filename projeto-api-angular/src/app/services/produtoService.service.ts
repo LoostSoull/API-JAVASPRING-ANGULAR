@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+
 
 import { CadastrarComponent } from '../pages/cadastrar-produto/cadastrar-produto.component';
 import { Produtos } from '../interfaces/produtos';
 import { ProdutosComponent } from '../pages/produto/produto.component';
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'

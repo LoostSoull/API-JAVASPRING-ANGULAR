@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Produtos } from 'src/app/interfaces/produtos';
 import { ConexaoApiService } from 'src/app/services/produtoService.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { ConexaoApiService } from 'src/app/services/produtoService.service';
 })
 export class EditarProdutoComponent {
 
-constructor(private conexaoApi:ConexaoApiService,private route: ActivatedRoute,routernavigate:Router){}
+constructor(private conexaoApi:ConexaoApiService,private route: ActivatedRoute,private routernavigate:Router){}
 
 
   produtosForm = new FormGroup({
@@ -42,10 +43,11 @@ constructor(private conexaoApi:ConexaoApiService,private route: ActivatedRoute,r
   }
 
   alterar(){
+    Swal.fire('Produto Atualizado com Sucesso!')
     const produtos: Produtos = this.produtosForm.value as Produtos;
     this.conexaoApi.alteraDados(produtos).subscribe(produto =>{
-      alert('sucesso');
       this.produtosForm.reset();
+      this.routernavigate.navigate(['']);
     });
   }
 }

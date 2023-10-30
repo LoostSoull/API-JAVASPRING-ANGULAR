@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Produtos } from 'src/app/interfaces/produtos';
 
 import { ConexaoApiService } from 'src/app/services/produtoService.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -12,7 +14,7 @@ import { ConexaoApiService } from 'src/app/services/produtoService.service';
 })
 export class ProdutosComponent {
 
-  constructor(private conexaoApi:ConexaoApiService){}
+  constructor(private conexaoApi:ConexaoApiService,private router:Router){}
   //tabela
   dadosRecebidos: Produtos[] = [] ;
 
@@ -44,6 +46,7 @@ export class ProdutosComponent {
 
 
   excluircomp(id:number){
+    Swal.fire('Produto Excluido com Sucesso!')
     this.conexaoApi.excluir(id).subscribe(produto =>{
       this.dadosRecebidos = this.dadosRecebidos.filter((produto) => produto.id != id);
     })
@@ -51,8 +54,9 @@ export class ProdutosComponent {
   }
 
 
-  altera(){
-    
+  home(){
+   
+    this.router.navigate(['']);
   }
 }
   

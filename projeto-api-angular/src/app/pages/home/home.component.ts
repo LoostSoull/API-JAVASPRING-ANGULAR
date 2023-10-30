@@ -12,6 +12,9 @@ export class HomeComponent {
   constructor(private router:Router){}
 
   irCadastro(){
-    this.router.navigate(['cadastrar']);
+    this.router.navigate(['produtos/cadastrar']);
+  }
+  irConsulta(){
+    this.router.navigate(['produtos']);
   }
 }

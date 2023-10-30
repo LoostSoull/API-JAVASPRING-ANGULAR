@@ -13,10 +13,11 @@ import { ConexaoApiService } from 'src/app/services/produtoService.service';
 export class ProdutosComponent {
 
   constructor(private conexaoApi:ConexaoApiService){}
-  
+  //tabela
   dadosRecebidos: Produtos[] = [] ;
 
-  produtosEnviados: Produtos[] = [];
+
+  
   
   produtosForm = new FormGroup({
    
@@ -30,6 +31,7 @@ export class ProdutosComponent {
  
   ngOnInit(){
     this.exibeDados();
+    
     }
 
   exibeDados(){

@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
+import { EditarProdutoComponent } from './pages/editar-produto/editar-produto.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     ProdutosComponent,
     CadastrarComponent,
-    HomeComponent
+    HomeComponent,
+    EditarProdutoComponent
     
     
     

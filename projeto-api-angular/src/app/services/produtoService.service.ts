@@ -23,7 +23,10 @@ export class ConexaoApiService {
   public excluir(id:number){
     return this.httpcliente.delete<Produtos>(`http://localhost:8080/api/produtos/${id}`)
   }
-  public alteraDados(produto:Partial<Produtos>,id:number){
-    return this.httpcliente.put<Produtos>(this.apiUrl,produto);
+  public dadosPorIdAlteracao(id:number){
+    return this.httpcliente.get<Produtos>(`http://localhost:8080/api/produtos/${id}`);
+  }
+  public alteraDados(produto:Produtos){
+    return this.httpcliente.put(this.apiUrl, produto);
   }
 }

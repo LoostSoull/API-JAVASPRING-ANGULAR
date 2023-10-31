@@ -35,7 +35,7 @@ constructor(private conexaoApi:ConexaoApiService,private route: ActivatedRoute,p
           preco: produto.preco
         })
         console.log(produto);
-
+        
       });
     }
     

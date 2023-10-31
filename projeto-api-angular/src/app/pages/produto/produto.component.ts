@@ -46,11 +46,28 @@ export class ProdutosComponent {
 
 
   excluircomp(id:number){
-    Swal.fire('Produto Excluido com Sucesso!')
-    this.conexaoApi.excluir(id).subscribe(produto =>{
-      this.dadosRecebidos = this.dadosRecebidos.filter((produto) => produto.id != id);
+    Swal.fire({
+      title: 'Tem certeza que deseja Exluir o produto?',
+      text: "Voce não vai poder reverter essa alteração!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#808080',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sm,Desejo excluir!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.conexaoApi.excluir(id).subscribe(produto =>{
+          this.dadosRecebidos = this.dadosRecebidos.filter((produto) => produto.id != id);
+        })
+        Swal.fire(
+          'Produto Excluido',
+          'Seu produto foi exluido.',
+          'success'
+        )
+      }
     })
     
+    this.router.navigate(['']);
   }
 
 

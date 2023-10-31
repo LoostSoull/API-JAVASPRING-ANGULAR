@@ -21,15 +21,11 @@ export class CadastrarComponent implements OnInit {
   produtosForm = new FormGroup({
    
     id: new FormControl(0),
-    codigoBarras: new FormControl(''),
-    nome: new FormControl(''),
-    preco: new FormControl(0)
+    codigoBarras: new FormControl('',[Validators.required ,Validators.minLength(5),Validators.maxLength(255)]),
+    nome: new FormControl('',[Validators.required,Validators.minLength(5),Validators.maxLength(255)]),
+    preco: new FormControl(0,Validators.required)
   })
-  form = this.formBuilder.group(controls:{
-    codigoBarras:['',[Validators.required,Validators.minLength(5),Validators.maxLength(255)]],
-    nome: ['',[Validators.required,Validators.minLength(5),Validators.maxLength(255)]],
-    preco:['',Validators.required]
-  });
+
   
   
   ngOnInit(): void {
@@ -47,9 +43,15 @@ export class CadastrarComponent implements OnInit {
       this.router.navigate(['']);
 
    }
+
+   home(){
+   
+    this.router.navigate(['']);
+  }
   
    
   }
 
     
+
 

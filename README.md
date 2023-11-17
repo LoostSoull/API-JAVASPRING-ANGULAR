@@ -12,7 +12,7 @@
 
 -Node Js
 
-- Angular CLI version 16.2.7
+-Angular CLI version 16.2.7
 
 -BootStrap 5
 
@@ -25,7 +25,8 @@
 >Navegue para http://localhost:4200/.
 > O aplicativo será recarregado automaticamente se você alterar algum dos arquivos de origem.
 
-##Java
+
+###Java
 
 >Execute a API, ela vai rodar na porta padrao (8080).
 >voce precisa instalar o mysql, pode utilizar as credenciais do meu arquivo propriets ou alterar pelas suas,utilizando as minhas, sera necessario reconfigurar, recomendo alterar pelas suas.

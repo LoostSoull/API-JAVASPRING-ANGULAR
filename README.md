@@ -26,8 +26,8 @@
 > O aplicativo será recarregado automaticamente se você alterar algum dos arquivos de origem.
 
 
-###Java
 
->Execute a API, ela vai rodar na porta padrao (8080).
->voce precisa instalar o mysql, pode utilizar as credenciais do meu arquivo propriets ou alterar pelas suas,utilizando as minhas, sera necessario reconfigurar, recomendo alterar pelas suas.
+>Utilizei a IDE Eclipse, porem em sua IDE,abra a api e execute o CrudApplication.java
+>ela vai rodar na porta padrao (8080).
+>voce precisa instalar o mysql, no arquivo properties da aplicacao, altere as configuracoes para a senha do seu banco, com seu usuario e senha. 
 >utilizei o dbeaver para monitorar a persistencia.

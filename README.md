@@ -31,3 +31,7 @@
 >ela vai rodar na porta padrao (8080).
 >voce precisa instalar o mysql, no arquivo properties da aplicacao, altere as configuracoes para a senha do seu banco, com seu usuario e senha. 
 >utilizei o dbeaver para monitorar a persistencia.
+
+
+### Video demonstrando o funcionamento da API
+[Clique Aqui](https://www.youtube.com/watch?v=fkpJWNvWiwA)
